@@ -1,14 +1,14 @@
 #!/usr/bin/python3
 def pow(a, b):
-        result = 1
-    
-        # If b is negative, invert a and make b positive
-        if b < 0:
-            a = 1 / a
-            b = -b
-    
-        # Calculate a^b by multiplying 'a' 'b' times
-        for _ in range(b):
-            result *= a
-    
-        return result
+            if b == 0:
+                return 1
+            if b < 0:
+                a = 1 / a
+                b = -b
+            result = 1
+            while b > 0:
+                if b % 2 == 1:
+                    result *= a
+                a *= a
+                b //= 2
+            return result
